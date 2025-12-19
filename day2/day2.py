@@ -1,5 +1,5 @@
 # %% [markdown]
-# ## Day 1
+# ## Day 2
 # ### Part 1
 # - we can just solve this using brute force
 #     - we can do brute force because we actually need to find the number itself to add them, not just count 
