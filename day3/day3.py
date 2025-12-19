@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parent
 # %% [markdown]
 # ## Day 3
 # ### Part 1
-# - At this point I will skip the string parsing
+# - at this point I will skip the string parsing
 # - let's consider each line/number
 # - at a particular `digit` in a line 
 #     - we want to try and match it with some other digit **to the right** of it to make a 2 digit joltage
@@ -43,7 +43,6 @@ def part1(input_path):
 print("Total max joltage in part 1 is", part1("input.txt"))
 
 # %% [markdown]
-# ## Day 3
 # ### Part 2
 # - again, we process each individual each line, let's call the number/string formed by the line to be `num_str`
 # - we can write a helper function `get_max_voltage` to find the max voltage we can make from that `num_str`
