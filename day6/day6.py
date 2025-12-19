@@ -2,7 +2,6 @@
 # set up
 from pathlib import Path
 import operator
-import re
 ROOT = Path(__file__).resolve().parent
 
 # %% [markdown]
