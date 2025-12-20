@@ -2,14 +2,14 @@
 # set up 
 from collections import defaultdict, deque
 from pathlib import Path
-from helper import is_dag, build_graph, top_sort, count_num_path_between
+from helpers import is_dag, build_graph, top_sort, count_num_path_between
 
 ROOT = Path(__file__).resolve().parent
 
 # %% [markdown]
 # ## Day 11
 # ### Part 1
-# - this is a classic graph counting path problem 
+# - this is a classic graph path counting problem 
 #     - the input is essentially given to you as a adjacency list 
 # - the question is bit simpler **if the graph was acyclic** (aka a DAG)
 #     - this is not explicitly stated in the question 
