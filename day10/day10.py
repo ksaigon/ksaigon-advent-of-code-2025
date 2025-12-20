@@ -6,7 +6,7 @@ from scipy.optimize import milp, LinearConstraint, Bounds
 import numpy as np
 ROOT = Path(__file__).resolve().parent
 # %% [markdown]
-# ## Day 9
+# ## Day 10
 # ### Part 1
 # - the 2 states, on and off, can be easily thought of as **binary digits**
 #     - the act of "toggling" can also be recognized as the bitwise XOR operation
