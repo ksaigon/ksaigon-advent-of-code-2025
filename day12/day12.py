@@ -1,3 +1,15 @@
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     formats: py:percent,ipynb
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.18.1
+# ---
+
 # %%
 from helpers import parse_input
 from pathlib import Path
@@ -10,13 +22,13 @@ ROOT = Path(__file__).resolve().parent
 #         can_fit(region, remaining_shapes):
 #         if remaining_shapes is empty:
 #             return True
-        
+#         
 #         # Pruning: check if remaining area is sufficient
 #         if total_cells_needed(remaining_shapes) > empty_cells(region):
 #             return False
-        
+#         
 #         pick a shape from remaining_shapes
-        
+#         
 #         for each rotation/flip of shape:
 #             for each valid position in region:
 #                 if shape fits at position without overlap:
@@ -24,7 +36,7 @@ ROOT = Path(__file__).resolve().parent
 #                     if can_fit(region, remaining_shapes - shape):
 #                         return True
 #                     remove shape (backtrack)
-        
+#         
 #         return False
 #         ```
 #         - this would blow up in complexity with large input, but I think you can still solve this < 3 minutes (which is crazy long)

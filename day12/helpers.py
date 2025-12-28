@@ -1,5 +1,19 @@
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     formats: py:percent,ipynb
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.18.1
+# ---
+
+# %%
 import re 
 
+# %%
 def parse_input(raw_input):
     blocks = raw_input.split("\n\n") # get individual "blocks"
     present_shapes, dimensions = [], []
@@ -16,12 +30,14 @@ def parse_input(raw_input):
 
     return present_info_list, region_info_list
 
-    
+
+# %%
 class PresentInfo:
     def __init__(self, grid=[], size=0):
         self.grid = grid 
         self.size = size
 
+# %%
 def parse_present_shapes(input):
     '''
     Given string of the present shape, return an object PresentInfo that has
@@ -33,6 +49,7 @@ def parse_present_shapes(input):
     size = input.count("#") # they happen to always be 7 but to be safe
     return PresentInfo(grid, size)
 
+# %%
 class RegionInfo:
     def __init__(self, w=0, l=0, requirements=None):  # Fix
         self.requirements = requirements if requirements is not None else {}
@@ -40,6 +57,7 @@ class RegionInfo:
         self.l = l 
         self.area = w * l
 
+# %%
 def parse_dimenion_requirements(input):
     """
     Given a line of str dimension requirement, convert it to its map form

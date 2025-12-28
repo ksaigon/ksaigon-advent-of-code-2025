@@ -1,5 +1,19 @@
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     formats: py:percent,ipynb
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.18.1
+# ---
+
+# %%
 from collections import defaultdict
 
+# %%
 def top_sort(graph, degrees):
     ordering = [v for v in graph if degrees[v] == 0]
     for node in ordering:
@@ -9,6 +23,7 @@ def top_sort(graph, degrees):
                 ordering.append(neighbour)
     return ordering
 
+# %%
 def count_num_path_between(src, dst, ordering, graph):
     dp = defaultdict(int) 
     dp[dst] = 1
@@ -17,6 +32,7 @@ def count_num_path_between(src, dst, ordering, graph):
             dp[node] = sum(dp[neighbour] for neighbour in graph[node])
     return dp[src]
 
+# %%
 def build_graph(lines):
     graph = defaultdict(list)
     degrees = defaultdict(int)
@@ -27,6 +43,7 @@ def build_graph(lines):
             degrees[neighbour] += 1
     return graph, degrees
 
+# %%
 def is_dag(graph):
     WHITE, GRAY, BLACK = 0, 1, 2
     color = defaultdict(int)

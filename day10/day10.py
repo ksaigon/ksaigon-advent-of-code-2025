@@ -1,3 +1,15 @@
+# ---
+# jupyter:
+#   jupytext:
+#     cell_metadata_filter: -all
+#     formats: py:percent,ipynb
+#     text_representation:
+#       extension: .py
+#       format_name: percent
+#       format_version: '1.3'
+#       jupytext_version: 1.18.1
+# ---
+
 # %%
 # set up 
 from pathlib import Path
@@ -103,7 +115,7 @@ print(f"Minimum move to turn on indicator in part 1 is {part1("input.txt")}")
 #     - this is just a linear combination of vectors, can be written as 
 #         ```
 #         A @ x = b
-
+#
 #         where:
 #             A = button matrix (each column is a button vector)
 #             x = [x_0, x_1, x_2, ...] (how many times to press each button)
@@ -150,9 +162,9 @@ print(f"Minimum move to turn on indicator in part 1 is {part1("input.txt")}")
 #     - putting it all together 
 #         - `milp(c, constraints=constraints, bounds=bounds, integrality=integrality)`
 #         - this says
-#             > "Find values for `x`` that satisfy my constraints (`A @ x = b``) and bounds (`x >= 0``), where all `x`` values must be integers, and among all such solutions, give me the one that minimizes `c @ x` (the sum of all presses)."
+#             > "Find values for `x` that satisfy my constraints (`A @ x = b`) and bounds (`x >= 0`), where all `x` values must be integers, and among all such solutions, give me the one that minimizes `c @ x` (the sum of all presses)."
 #         - solver returns `result.fun` which is the minimum value of `c @ x`` it found
-# %% 
+# %%
 def part2(input_path):
     with open(ROOT / input_path) as f: 
         input = f.read()
