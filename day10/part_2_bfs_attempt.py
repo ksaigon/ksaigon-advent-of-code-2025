@@ -1,28 +1,13 @@
-# ---
-# jupyter:
-#   jupytext:
-#     cell_metadata_filter: -all
-#     formats: py:percent,ipynb
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.18.1
-# ---
-
-# %%
 from pathlib import Path
 from collections import deque
 ROOT = Path(__file__).resolve().parent
 
-# %%
 def part2(input_path):
     with open(ROOT / input_path) as f: 
         input = f.read()
     lines = [line.strip() for line in input.splitlines() if line.strip()]
     return min_moves_to_configure_joltage(lines)
 
-# %%
 def min_moves_to_configure_joltage(lines):
     res = 0
     for line in lines:
@@ -34,7 +19,6 @@ def min_moves_to_configure_joltage(lines):
         res += compute_min_move_joltage(joltage, moves)
     return res
 
-# %%
 def compute_min_move_joltage(joltage, moves):
     n = len(joltage)
     start_state = [0] * n
@@ -55,7 +39,6 @@ def compute_min_move_joltage(joltage, moves):
                 queue.append((new_state, move_count + 1))
     return -1 # never possible to reach final state
 
-# %%
 def parse_joltage_moves(moves_str, n):
     all_moves = []
     for move_str in moves_str:
@@ -66,5 +49,4 @@ def parse_joltage_moves(moves_str, n):
         all_moves.append(move)
     return all_moves
 
-# %%
 print(f"Minimum move to configure joltage in part 2 is {part2("input.txt")}")

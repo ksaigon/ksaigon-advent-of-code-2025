@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Ensure jupytext exists
 if ! command -v jupytext >/dev/null 2>&1; then
   echo "Error: jupytext is not installed."
   echo "Install with: pip install jupytext"
   exit 1
 fi
 
-echo "Scanning for .py files..."
+echo "Scanning for day*.py files..."
 
-find . -type f -name "*.py" \
+find ./day?? -type f -name "day*.py" ...
   -not -path "*/.venv/*" \
   -not -path "*/venv/*" \
   -not -path "*/.git/*" \
@@ -20,13 +19,13 @@ find . -type f -name "*.py" \
 
     echo "Processing $f"
 
-    # Pair formats (percent -> ipynb)
+    # Pair percent-format .py with .ipynb
     jupytext --quiet --set-formats "py:percent,ipynb" "$f"
 
-    # Create / update notebook next to it
+    # Create/update the notebook
     jupytext --quiet --to ipynb "$f"
 
-    echo "✓ ${f%.py}.ipynb created"
+    echo "✓ ${f%.py}.ipynb"
 done
 
 echo "All done."

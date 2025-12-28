@@ -1,21 +1,7 @@
-# ---
-# jupyter:
-#   jupytext:
-#     cell_metadata_filter: -all
-#     formats: py:percent,ipynb
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.18.1
-# ---
-
-# %%
 from collections import defaultdict
 from pathlib import Path 
 ROOT = Path(__file__).resolve().parent
 
-# %%
 def part2(input_path):
     with open(ROOT / input_path) as f: 
         input = f.read()
@@ -28,7 +14,6 @@ def part2(input_path):
     ]
     return largest_rectangle_in_bounds(coordinates)
 
-# %%
 def largest_rectangle_in_bounds(coordinates):
     n = len(coordinates)
     row_intervals = defaultdict(set)
